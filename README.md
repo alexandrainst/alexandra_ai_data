@@ -9,7 +9,7 @@ ______________________________________________________________________
 [![Documentation](https://img.shields.io/badge/docs-passing-green)](https://alexandrainst.github.io/alexandra_ai_data/alexandra_ai_data.html)
 [![License](https://img.shields.io/github/license/alexandrainst/alexandra_ai_data)](https://github.com/alexandrainst/alexandra_ai_data/blob/main/LICENSE)
 [![LastCommit](https://img.shields.io/github/last-commit/alexandrainst/alexandra_ai_data)](https://github.com/alexandrainst/alexandra_ai_data/commits/main)
-[![Code Coverage](https://img.shields.io/badge/Coverage-100%25-green.svg)](https://github.com/alexandrainst/alexandra_ai_data/tree/main/tests)
+[![Code Coverage](https://img.shields.io/badge/Coverage-100%25-brightgreen.svg)](https://github.com/alexandrainst/alexandra_ai_data/tree/main/tests)
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.0-4baaaa.svg)](https://github.com/alexandrainst/alexandra_ai_data/blob/main/CODE_OF_CONDUCT.md)
 
 ## Installation
