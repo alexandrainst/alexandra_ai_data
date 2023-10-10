@@ -1,7 +1,8 @@
-<a href="https://github.com/alexandrainst/alexandra_ai_data"><img src="https://github.com/alexandrainst/alexandra_ai_data/raw/main/gfx/alexandra_logo.png" width="239" height="175" align="right" /></a>
-# alexandra_ai_data
+<div align='center'>
+ <img src="https://raw.githubusercontent.com/alexandrainst/AlexandraAI/main/gfx/alexandra-ai-logo-dark.svg">
+</div>
 
-Easy access to Danish data sources.
+### Easy Access to Danish Data Sources
 
 ______________________________________________________________________
 [![Documentation](https://img.shields.io/badge/docs-passing-green)](https://alexandrainst.github.io/alexandra_ai_data/alexandra_ai_data.html)
@@ -13,6 +14,7 @@ ______________________________________________________________________
 
 Developers:
 
+- Peter Bjørn Jørgensen (peter.jorgensen@alexandra.dk)
 - Dan Saattrup Nielsen (dan.nielsen@alexandra.dk)
 
 

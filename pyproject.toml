@@ -3,6 +3,7 @@ name = "alexandra_ai_data"
 version = "0.0.0"
 description = "Easy access to Danish data sources."
 authors = [
+    "Peter Bjørn Jørgensen <peter.jorgensen@alexandra.dk>",
     "Dan Saattrup Nielsen <dan.nielsen@alexandra.dk>",
 ]
 readme = "README.md"
