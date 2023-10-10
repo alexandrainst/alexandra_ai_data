@@ -5,6 +5,7 @@
 ### Easy Access to Danish Data Sources
 
 ______________________________________________________________________
+[![PyPI Status](https://badge.fury.io/py/alexandra_ai_data.svg)](https://pypi.org/project/alexandra_ai_data/)
 [![Documentation](https://img.shields.io/badge/docs-passing-green)](https://alexandrainst.github.io/alexandra_ai_data/alexandra_ai_data.html)
 [![License](https://img.shields.io/github/license/alexandrainst/alexandra_ai_data)](https://github.com/alexandrainst/alexandra_ai_data/blob/main/LICENSE)
 [![LastCommit](https://img.shields.io/github/last-commit/alexandrainst/alexandra_ai_data)](https://github.com/alexandrainst/alexandra_ai_data/commits/main)
