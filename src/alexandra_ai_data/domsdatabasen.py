@@ -34,6 +34,12 @@ class Domsdatabasen:
         self.config: DictConfig = config
         self.dataset = load_dataset("alexandrainst/domsdatabasen")["train"]
 
+        # The following objects will not be initialized until
+        # the first time they are needed.
+        self.scraper = None
+        self.processor = None
+        self.dataset_builder = None
+
     def get_case(self, case_id: str) -> dict:
         """Get processed data for a case from Domsdatabasen.
 
@@ -62,14 +68,23 @@ class Domsdatabasen:
             f"Case_id {case_id} not found in cached dataset. "
             "Scraping and processing the case..."
         )
-        scraper = Scraper(config=config)
-        processor = Processor(config=config)
-        dataset_builder = DatasetBuilder(config=config)
-
-        scraper.scrape(case_id=case_id)
-        processed_data = processor.process(case_id=case_id)
-        dataset_sample = dataset_builder.make_dataset_sample(
+        self._initialze_objects()
+        self.scraper.scrape(case_id=case_id)
+        processed_data = self.processor.process(case_id=case_id)
+        dataset_sample = self.dataset_builder.make_dataset_sample(
             processed_data=processed_data
         )
 
         return dataset_sample
+
+    def _initialze_objects(self):
+        """Initialize Scraper, Processor and DatasetBuilder objects.
+
+        We don't want to initialize these objects before they are needed.
+        """
+        if self.scraper is not None:
+            return
+
+        self.scraper = Scraper(config=self.config)
+        self.processor = Processor(config=self.config)
+        self.dataset_builder = DatasetBuilder(config=self.config)
