@@ -9,6 +9,7 @@ repos:
       - id: ruff
         args: [--fix, --exit-non-zero-on-fix]
         types_or: [python, pyi, jupyter]
+        exclude: src/alexandra_ai_data/config_domsdatabasen.py
 -   repo: https://github.com/kynan/nbstripout
     rev: 0.6.0
     hooks:
