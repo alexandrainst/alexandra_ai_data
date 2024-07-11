@@ -1,6 +1,8 @@
-from alexandra_ai_data.domsdatabasen import DomsDatabasen
+"""Example usage of the Domsdatabasen API"""
 
-domsdatabasen = DomsDatabasen()
+from alexandra_ai_data.domsdatabasen import Domsdatabasen
+
+domsdatabasen = Domsdatabasen()
 
 case = domsdatabasen.get_case(case_id="100")
 

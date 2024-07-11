@@ -13,7 +13,7 @@ from datasets import load_dataset
 logger = getLogger(__name__)
 
 
-class DomsDatabasen:
+class Domsdatabasen:
     """API for accessing processed data from Domsdatabasen
 
     Attributes:
