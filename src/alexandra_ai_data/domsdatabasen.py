@@ -1,4 +1,4 @@
-"""API for accessing processed data from Domsdatabasen."""
+"""API for accessing processed data from Domsdataabasen."""
 
 from omegaconf import DictConfig
 
