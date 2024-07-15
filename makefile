@@ -41,7 +41,10 @@ install: ## Install dependencies
 	@$(MAKE) --quiet install-poetry
 	@$(MAKE) --quiet setup-poetry
 	@$(MAKE) --quiet setup-environment-variables
-	@echo "Installed the 'ScandEval' project."
+	@echo "Installed the 'ScandEval' project. If you want to use pre-commit hooks, run 'make install-pre-commit'."
+
+install-pre-commit:  ## Install pre-commit hooks
+	@poetry run pre-commit install
 
 install-brew:
 	@if [ $$(uname) = "Darwin" ] && [ "$(shell which brew)" = "" ]; then \
@@ -72,7 +75,6 @@ install-poetry:
 setup-poetry:
 	@poetry env use python3.11
 	@poetry install
-	@poetry run pre-commit install
 
 setup-environment-variables:
 	@poetry run python src/scripts/fix_dot_env_file.py
