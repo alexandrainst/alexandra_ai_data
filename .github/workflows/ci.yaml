@@ -2,28 +2,34 @@ name: CI
 
 on:
   pull_request:
+    types:
+      - opened
+      - synchronize
+      - reopened
+      - ready_for_review
     branches:
       - main
 
 jobs:
-
   lint:
+    if: github.event.pull_request.draft == false
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: jpetrucciani/black-check@master
+      - uses: actions/checkout@v4
+      - uses: jpetrucciani/ruff-check@main
 
   pytest:
+    if: github.event.pull_request.draft == false
     strategy:
         matrix:
             os: [ubuntu-latest]
             python-version: ["3.11"]
     runs-on: ${{ matrix.os }}
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Install Poetry
-        run: pip3 install poetry==1.4.0
+        run: pipx install poetry==1.8.2
 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -37,4 +43,4 @@ jobs:
           poetry install --no-interaction --no-cache
 
       - name: Test with pytest
-        run: poetry run pytest --dist no -n 0
+        run: poetry run pytest
