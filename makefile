@@ -126,10 +126,10 @@ publish-minor: bump-minor publish  ## Publish a minor version
 publish-patch: bump-patch publish  ## Publish a patch version
 
 lint:  ## Lint code
-	@poetry run ruff check . --fix
+	@poetry run ruff check src --fix
 
 type-check:  ## Run type checking
-	@poetry run mypy . --install-types --non-interactive --ignore-missing-imports --show-error-codes
+	@poetry run mypy src --install-types --non-interactive --ignore-missing-imports --show-error-codes
 
 test:  ## Run tests
 	@poetry run pytest && poetry run readme-cov
