@@ -129,7 +129,7 @@ lint:  ## Lint code
 	@poetry run ruff check src --fix
 
 type-check:  ## Run type checking
-	@poetry run mypy src --install-types --non-interactive --ignore-missing-imports --show-error-codes
+	@poetry run mypy src --install-types --non-interactive --ignore-missing-imports --show-error-codes --check-untyped-defs
 
 test:  ## Run tests
 	@poetry run pytest && poetry run readme-cov
