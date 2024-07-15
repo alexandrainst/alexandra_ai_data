@@ -1,4 +1,5 @@
-"""
+"""Easy access to Danish data sources.
+
 .. include:: ../../README.md
 """
 

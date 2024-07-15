@@ -39,39 +39,4 @@ check out all the ways you can contribute to this package. :sparkles:
 
 The following are the core maintainers of the `alexandra_ai_data` package:
 
-- [@peterbjorgensen](https://github.com/peterbjorgensen) (Peter Bjørn Jørgensen; peter.jorgensen@alexandra.dk)
 - [@saattrupdan](https://github.com/saattrupdan) (Dan Saattrup Nielsen; saattrupdan@alexandra.dk)
-
-## Project structure
-
-```
-.
-├── .devcontainer
-│   └── devcontainer.json
-├── .github
-│   └── workflows
-│       ├── ci.yaml
-│       └── docs.yaml
-├── .gitignore
-├── .pre-commit-config.yaml
-├── CODE_OF_CONDUCT.md
-├── CONTRIBUTING.md
-├── LICENSE
-├── README.md
-├── makefile
-├── poetry.toml
-├── pyproject.toml
-├── src
-│   ├── alexandra_ai_data
-│   │   ├── __init__.py
-│   │   ├── cvr.py
-│   │   ├── cvr_api.py
-│   │   ├── dmi.py
-│   │   └── dmi_api.py
-│   └── scripts
-│       ├── fix_dot_env_file.py
-│       └── versioning.py
-└── tests
-    ├── __init__.py
-    └── test_dummy.py
-```

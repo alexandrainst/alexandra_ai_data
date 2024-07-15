@@ -1,4 +1,4 @@
-# Welcome to alexandra_ai_data contributing guide
+# Welcome to the AlexandraAI-Data Contributing Guide
 
 Thank you for investing your time in contributing to our project! :sparkles:.
 
@@ -87,4 +87,4 @@ questions or request for additional information.
 
 ### Your PR is merged!
 
-Congratulations :tada::tada: The alexandra_ai_data team thanks you :sparkles:.
+Congratulations :tada::tada: The AlexandraAI-Data team thanks you :sparkles:.

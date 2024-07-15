@@ -3,7 +3,6 @@ name = "alexandra_ai_data"
 version = "0.0.0"
 description = "Easy access to Danish data sources."
 authors = [
-    "Peter Bjørn Jørgensen <peter.jorgensen@alexandra.dk>",
     "Dan Saattrup Nielsen <dan.nielsen@alexandra.dk>",
 ]
 readme = "README.md"
@@ -13,57 +12,68 @@ license = "MIT"
 python = ">=3.11,<3.13"
 
 [tool.poetry.group.dev.dependencies]
-pytest = "^7.4.2"
-pytest-xdist = "^3.3.1"
-pytest-cov = "^4.1.0"
-pre-commit = "^3.4.0"
-pdoc = "^14.5.1"
-readme-coverage-badger = ">=0.1.2,<1.0.0"
-click = "^8.1.7"
+pytest = ">=7.4.2"
+pytest-cov = ">=4.1.0"
+pre-commit = ">=3.4.0"
+pdoc = ">=14.5.1"
+readme-coverage-badger = ">=0.1.2"
+click = ">=8.1.7"
+ruff = ">=0.3.2"
+mypy = ">=1.9.0"
+nbstripout = ">=0.7.1"
 
 [tool.pytest.ini_options]
 minversion = "7.0"
 addopts = [
-    '--verbose',
     '--durations=10',
-    '--color=yes',
-    '-s',
-    '-vv',
+    '--color=no',
     '--doctest-modules',
     '--cov=src/alexandra_ai_data',
-    '-n 2',
 ]
 xfail_strict = true
 filterwarnings = [
     "error",
     "ignore::UserWarning",
     "ignore::DeprecationWarning",
+    "ignore::PendingDeprecationWarning",
     "ignore::ImportWarning",
+    "ignore::FutureWarning",
 ]
 log_cli_level = "info"
 testpaths = ["tests", "src/alexandra_ai_data"]
 
-[tool.black]
-line-length = 88
-include = '\.pyi?$'
-exclude = '''
-/(
-	\.git
-| \.hg
-| \.mypy_cache
-| \.tox
-| \.venv
-| _build
-| buck-out
-| build
-)/
-'''
-
 [tool.ruff]
-target-version = "py311"
+line-length = 88
+target-version = "py310"
+exclude = [
+    ".git",
+    ".mypy_cache",
+    ".pytest_cache",
+    ".ruff_cache",
+    ".scandeval_cache",
+    ".venv",
+]
 
-[tool.ruff.extend-per-file-ignores]
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+docstring-code-format = true
+skip-magic-trailing-comma = true
+
+[tool.ruff.lint]
+extend-select = [
+    "I",
+    "D",
+]
+
+[tool.ruff.lint.extend-per-file-ignores]
 "__init__.py" = ["F401"]
+
+[tool.ruff.lint.isort]
+split-on-trailing-comma = false
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
