@@ -30,7 +30,7 @@ class Domsdatabasen:
     def __init__(self):
         """Initialize."""
         self.config: DictConfig = config
-        self.dataset = load_dataset("alexandrainst/domsdatabasen")["train"]
+        self.dataset = load_dataset("alexandrainst/domsdatabasen", split="train")
 
         # The following objects will not be initialized until
         # the first time they are needed.
