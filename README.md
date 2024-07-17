@@ -20,10 +20,27 @@ To install the package simply write the following command in your favorite termi
 pip install alexandra-ai-data
 ```
 
+### Domsdatabasen
+The processing part of the Domsdatabasen API depends on [poppler](https://poppler.freedesktop.org/). To install it on macOS, run the following command:
+
+```
+brew install poppler
+```
+
+This is only necessary if you use the API to get cases that are not in [the cached dataset](https://huggingface.co/datasets/alexandrainst/domsdatabasen).
 
 ## Quickstart
 
-TODO
+### Domsdatabasen usage example
+```python
+from alexandra_ai_data.domsdatabasen import Domsdatabasen
+
+domsdatabasen = Domsdatabasen()
+
+case = domsdatabasen.get_case(case_id="100")
+
+print(case)
+```
 
 
 ## Contributors

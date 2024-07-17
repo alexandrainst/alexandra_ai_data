@@ -35,13 +35,16 @@ help:
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' makefile | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
 
 install: ## Install dependencies
-	@echo "Installing the 'ScandEval' project..."
+	@echo "Installing the 'AlexandraAI-data' project..."
 	@$(MAKE) --quiet install-brew
 	@$(MAKE) --quiet install-pipx
 	@$(MAKE) --quiet install-poetry
 	@$(MAKE) --quiet setup-poetry
 	@$(MAKE) --quiet setup-environment-variables
-	@echo "Installed the 'ScandEval' project."
+	@echo "Installed the 'AlexandraAI-data' project. If you want to use pre-commit hooks, run 'make install-pre-commit'."
+
+install-pre-commit:  ## Install pre-commit hooks
+	@poetry run pre-commit install
 
 install-brew:
 	@if [ $$(uname) = "Darwin" ] && [ "$(shell which brew)" = "" ]; then \
@@ -72,7 +75,6 @@ install-poetry:
 setup-poetry:
 	@poetry env use python3.11
 	@poetry install
-	@poetry run pre-commit install
 
 setup-environment-variables:
 	@poetry run python src/scripts/fix_dot_env_file.py
@@ -122,6 +124,12 @@ publish-major: bump-major publish  ## Publish a major version
 publish-minor: bump-minor publish  ## Publish a minor version
 
 publish-patch: bump-patch publish  ## Publish a patch version
+
+lint:  ## Lint code
+	@poetry run ruff check src --fix
+
+type-check:  ## Run type checking
+	@poetry run mypy src --install-types --non-interactive --ignore-missing-imports --show-error-codes --check-untyped-defs
 
 test:  ## Run tests
 	@poetry run pytest && poetry run readme-cov
