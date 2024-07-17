@@ -67,7 +67,7 @@ class Domsdatabasen:
             f"Case_id {case_id} not found in cached dataset. "
             "Scraping and processing the case..."
         )
-        self._initialze_objects()
+        self._initialize_objects()
         self.scraper.scrape(case_id=case_id)
         processed_data = self.processor.process(case_id=case_id)
         dataset_sample = self.dataset_builder.make_dataset_sample(
@@ -76,7 +76,7 @@ class Domsdatabasen:
 
         return dataset_sample
 
-    def _initialze_objects(self):
+    def _initialize_objects(self):
         """Initialize Scraper, Processor and DatasetBuilder objects.
 
         We don't want to initialize these objects before they are needed.
