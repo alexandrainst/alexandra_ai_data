@@ -1,4 +1,4 @@
-"""Example usage of the Domsdatabasen API"""
+"""Example usage of the Domsdatabasen API."""
 
 from alexandra_ai_data.domsdatabasen import Domsdatabasen
 

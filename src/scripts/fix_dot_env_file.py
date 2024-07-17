@@ -6,6 +6,7 @@ Usage:
 
 import subprocess
 from pathlib import Path
+
 import click
 
 # List of all the environment variables that are desired
@@ -75,8 +76,7 @@ def fix_dot_env_file(non_interactive: bool) -> None:
                 )
                 value = (
                     subprocess.check_output(
-                        ["sed", "-E", "s/.*\\/([^ ]+).*/\\1/"],
-                        stdin=grep.stdout,
+                        ["sed", "-E", "s/.*\\/([^ ]+).*/\\1/"], stdin=grep.stdout
                     )
                     .decode()
                     .strip("\n")

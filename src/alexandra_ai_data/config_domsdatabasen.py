@@ -1,5 +1,6 @@
-from omegaconf import OmegaConf, DictConfig
+"""Configuration for the domsdatabasen package."""
 
+from omegaconf import DictConfig, OmegaConf
 
 config: DictConfig = OmegaConf.create(
     {

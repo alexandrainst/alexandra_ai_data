@@ -1,20 +1,18 @@
 """API for accessing processed data from Domsdatabasen."""
 
-from omegaconf import DictConfig
-
-from domsdatabasen import DatasetBuilder, Scraper, Processor
-
-from .config_domsdatabasen import config
-
 from logging import getLogger
 
 from datasets import load_dataset
+from domsdatabasen import DatasetBuilder, Processor, Scraper
+from omegaconf import DictConfig
+
+from .config_domsdatabasen import config
 
 logger = getLogger(__name__)
 
 
 class Domsdatabasen:
-    """API for accessing processed data from Domsdatabasen
+    """API for accessing processed data from Domsdatabasen.
 
     Attributes:
         config (DictConfig):
