@@ -31,7 +31,16 @@ This is only necessary if you use the API to get cases that are not in [the cach
 
 ## Quickstart
 
-TODO
+### Domsdatabasen usage example
+```python
+from alexandra_ai_data.domsdatabasen import Domsdatabasen
+
+domsdatabasen = Domsdatabasen()
+
+case = domsdatabasen.get_case(case_id="100")
+
+print(case)
+```
 
 
 ## Contributors
