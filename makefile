@@ -35,13 +35,13 @@ help:
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' makefile | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
 
 install: ## Install dependencies
-	@echo "Installing the 'ScandEval' project..."
+	@echo "Installing the 'AlexandraAI-data' project..."
 	@$(MAKE) --quiet install-brew
 	@$(MAKE) --quiet install-pipx
 	@$(MAKE) --quiet install-poetry
 	@$(MAKE) --quiet setup-poetry
 	@$(MAKE) --quiet setup-environment-variables
-	@echo "Installed the 'ScandEval' project. If you want to use pre-commit hooks, run 'make install-pre-commit'."
+	@echo "Installed the 'AlexandraAI-data' project. If you want to use pre-commit hooks, run 'make install-pre-commit'."
 
 install-pre-commit:  ## Install pre-commit hooks
 	@poetry run pre-commit install
