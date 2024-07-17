@@ -1,6 +1,7 @@
 """API for accessing processed data from Domsdatabasen."""
 
 from logging import getLogger
+from typing import Union
 
 from datasets import load_dataset
 from domsdatabasen import DatasetBuilder, Processor, Scraper
@@ -38,14 +39,14 @@ class Domsdatabasen:
         self.processor = None
         self.dataset_builder = None
 
-    def get_case(self, case_id: str) -> dict:
+    def get_case(self, case_id: Union[str, int]) -> dict:
         """Get processed data for a case from Domsdatabasen.
 
         If the case_id is already in the dataset, the data is returned from the dataset.
         Else, the case will be scraped and processed.
 
         Args:
-            case_id (str):
+            case_id (str, int):
                 The case_id of the case to get data for.
 
         Returns:
